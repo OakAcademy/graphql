@@ -15,18 +15,22 @@ function MovieList() {
       return (
          data.movies.map((movie) => {
             return (
-               <li key={movie.id} onClick={(e) => setSelectedMovie(movie.id)}>{movie.name}</li>
+               <li className="list-group-item m-2 shadow-sm " style={{ cursor: 'pointer', borderRadius: '5px' }} key={movie.id} onClick={(e) => setSelectedMovie(movie.id)}>{movie.name}</li>
             )
          })
       )
    }
 
    return (
-      <div>
-         <ul>
-            {renderMovies()}
-         </ul>
-         <MovieDetails selectedMovie={selectedMovie} />
+      <div className="row h-100">
+         <div className="col-md-7 p-4">
+            <ul className="list-group list-group-horizontal flex-wrap">
+               {renderMovies()}
+            </ul>
+         </div>
+         <div className="col-md-5 p-4 text-white" style={{ backgroundColor: '#457b9d' }}>
+            <MovieDetails selectedMovie={selectedMovie} />
+         </div>
       </div>
    );
 }

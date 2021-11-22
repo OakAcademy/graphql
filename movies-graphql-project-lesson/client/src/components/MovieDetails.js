@@ -18,7 +18,7 @@ const MovieDetails = ({ selectedMovie }) => {
 
       if (movie) {
          return (
-            <div >
+            <div>
                <h2>{movie.name}</h2>
                <p>Genre: {movie.genre}</p>
                <p>Directed By: {movie.director.name}</p>
